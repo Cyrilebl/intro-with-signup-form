@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Intro component with sign up form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- Left part -->
+      <section class="left">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </section>
+
+      <!-- Right part -->
+      <section class="right">
+        <h2><span>Try it free 7 days</span> then $20/mo. thereafter</h2>
+        <div class="right__form">
+          <form action="#" method="post">
+            <!-- First Name -->
+            <div class="container">
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+              />
+              <div class="error-icon">
+                <img src="assets/images/icon-error.svg" alt="error icon" />
+              </div>
+              <div class="error-text"><p></p></div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="container">
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+              />
+              <div class="error-icon">
+                <img src="assets/images/icon-error.svg" alt="error icon" />
+              </div>
+              <div class="error-text"><p></p></div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="container">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+              />
+              <div class="error-icon">
+                <img src="assets/images/icon-error.svg" alt="error icon" />
+              </div>
+              <div class="error-text"><p></p></div>
+            </div>
+
+            <!-- Password -->
+            <div class="container">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+              />
+              <div class="error-icon">
+                <img src="assets/images/icon-error.svg" alt="error icon" />
+              </div>
+              <div class="error-text"><p></p></div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">CLAIM YOUR FREE TRIAL</button>
+          </form>
+
+          <!-- Terms and Services -->
+          <div class="accept-terms">
+            <p>
+              By clicking the button, you are agreeing to our
+              <span>Terms and Services</span>
+            </p>
+          </div>
+          <div class="subscription">
+            <p>Thanks for your subscription</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
