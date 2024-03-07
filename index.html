@@ -10,12 +10,6 @@
       href="./images/favicon-32x32.png"
     />
     <title>Intro component with sign up form</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link href="assets/css/style.css" rel="stylesheet" />
     <script src="assets/js/script.js" defer></script>
   </head>
@@ -38,58 +32,90 @@
           <form action="#" method="post">
             <!-- First Name -->
             <div class="container">
+              <label for="firstName"></label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
                 placeholder="First Name"
               />
-              <div class="error-icon">
-                <img src="assets/images/icon-error.svg" alt="error icon" />
-              </div>
-              <div class="error-text"><p></p></div>
+              <img
+                class="error-icon"
+                src="assets/images/icons8-haute-importance-40.png"
+                alt="error icon"
+              />
+              <img
+                class="valid-icon"
+                src="assets/images/icons8-ok-40.png"
+                alt="valid icon"
+              />
+              <p class="error-text"></p>
             </div>
 
             <!-- Last Name -->
             <div class="container">
+              <label for="lastName"></label>
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
                 placeholder="Last Name"
               />
-              <div class="error-icon">
-                <img src="assets/images/icon-error.svg" alt="error icon" />
-              </div>
-              <div class="error-text"><p></p></div>
+              <img
+                class="error-icon"
+                src="assets/images/icons8-haute-importance-40.png"
+                alt="error icon"
+              />
+              <img
+                class="valid-icon"
+                src="assets/images/icons8-ok-40.png"
+                alt="valid icon"
+              />
+              <p class="error-text"></p>
             </div>
 
             <!-- E-mail -->
             <div class="container">
+              <label for="email"></label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="Email Address"
               />
-              <div class="error-icon">
-                <img src="assets/images/icon-error.svg" alt="error icon" />
-              </div>
-              <div class="error-text"><p></p></div>
+              <img
+                class="error-icon"
+                src="assets/images/icons8-haute-importance-40.png"
+                alt="error icon"
+              />
+              <img
+                class="valid-icon"
+                src="assets/images/icons8-ok-40.png"
+                alt="valid icon"
+              />
+              <p class="error-text"></p>
             </div>
 
             <!-- Password -->
             <div class="container">
+              <label for="password"></label>
               <input
                 type="password"
                 id="password"
                 name="password"
                 placeholder="Password"
               />
-              <div class="error-icon">
-                <img src="assets/images/icon-error.svg" alt="error icon" />
-              </div>
-              <div class="error-text"><p></p></div>
+              <img
+                class="error-icon"
+                src="assets/images/icons8-haute-importance-40.png"
+                alt="error icon"
+              />
+              <img
+                class="valid-icon"
+                src="assets/images/icons8-ok-40.png"
+                alt="valid icon"
+              />
+              <p class="error-text"></p>
             </div>
 
             <!-- Submit Button -->

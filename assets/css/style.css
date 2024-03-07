@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
 :root {
   /* background-color */
   --background: hsl(0, 100%, 74%);
@@ -129,12 +131,32 @@ main {
   margin-bottom: 20px;
 }
 
-.error-icon {
-  display: none;
+.container img {
+  visibility: hidden;
   position: absolute;
-  top: 16px;
-  right: 0;
-  padding-right: 25px;
+  width: 25px;
+  top: 15px;
+  right: 20px;
+}
+
+.container.success input {
+  visibility: visible;
+  border: 2px solid hsl(162, 100%, 40%);
+}
+
+.container.error input {
+  visibility: visible;
+  border: 2px solid hsl(359, 100%, 70%);
+}
+
+.container.success .valid-icon {
+  visibility: visible;
+  color: hsl(162, 100%, 40%);
+}
+
+.container.error .error-icon {
+  visibility: visible;
+  color: hsl(359, 100%, 70%);
 }
 
 .error-text {
@@ -227,6 +249,11 @@ main {
 
   .container {
     width: 300px;
+  }
+
+  .container img {
+    top: 13px;
+    right: 15px;
   }
 
   .right__form button {

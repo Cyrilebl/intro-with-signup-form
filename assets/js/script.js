@@ -1,89 +1,98 @@
-// First Name
-function validatefirstName(firstName) {
-  let firstNameRegex = /^[a-zA-Z\s-]+$/;
-  return firstNameRegex.test(firstName);
-}
-
-// Last Name
-function validatelastName(lastName) {
-  let lastNameRegex = /^[a-zA-Z\s-]+$/;
-  return lastNameRegex.test(lastName);
+// First Name & Last Name
+function isName(name) {
+  return /^[a-zA-Z\s-]+$/.test(name);
 }
 
 // E-mail
-function validateEmail(email) {
-  let emailRegex = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
-  return emailRegex.test(email);
+function isEmail(email) {
+  return /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(email);
 }
 
 // Password
-function validatePassword(password) {
-  let passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{10,}$/;
-  return passwordRegex.test(password);
+function isPassword(password) {
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/.test(
+    password
+  );
 }
 
-// Check input validation
-function validateInput(inputElement, isValid) {
-  let container = inputElement.parentElement;
-  let errorIcon = container.querySelector(".error-icon");
-  let validateSubscription = document.querySelector(".subscription");
+function setSuccessFor(input) {
+  const container = input.parentElement;
+  const errorText = container.querySelector(".error-text");
 
-  if (!isValid) {
-    inputElement.style.border = "1px solid red";
-    errorIcon.style.display = "block";
-    validateSubscription.style.display = "none";
+  errorText.innerText = "";
+  container.className = "container success";
+}
+
+function setErrorFor(input, message) {
+  const container = input.parentElement;
+  const errorText = container.querySelector(".error-text");
+
+  errorText.innerText = message;
+  container.className = "container error";
+}
+
+function checkInputs() {
+  const firstName = document.getElementById("firstName");
+  const lastName = document.getElementById("lastName");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+
+  if (firstName.value.trim() === "") {
+    setErrorFor(firstName, "First Name cannot be empty");
+  } else if (!isName(firstName.value.trim())) {
+    setErrorFor(
+      firstName,
+      "Invalid first name. Only letters, spaces, and hyphens."
+    );
   } else {
-    inputElement.style.border = "";
-    errorIcon.style.display = "none";
+    setSuccessFor(firstName);
+  }
+
+  if (lastName.value.trim() === "") {
+    setErrorFor(lastName, "Last Name cannot be empty");
+  } else if (!isName(lastName.value.trim())) {
+    setErrorFor(
+      lastName,
+      "Invalid last name. Only letters, spaces, and hyphens."
+    );
+  } else {
+    setSuccessFor(lastName);
+  }
+
+  if (email.value.trim() === "") {
+    setErrorFor(email, "Email Address cannot be empty");
+  } else if (!isEmail(email.value.trim())) {
+    setErrorFor(email, "Looks like this is not an email.");
+  } else {
+    setSuccessFor(email);
+  }
+
+  if (password.value === "") {
+    setErrorFor(password, "Password cannot be empty");
+  } else if (!isPassword(password.value)) {
+    setErrorFor(
+      password,
+      "Password must have : 8 characters, 1 uppercase, 1 number, 1 special character."
+    );
+  } else {
+    setSuccessFor(password);
+  }
+
+  if (
+    isName(firstNameValue) &&
+    isName(lastNameValue) &&
+    isEmail(emailValue) &&
+    isPassword(passwordValue)
+  ) {
+    const validateSubscription = document.querySelector(".subscription");
     validateSubscription.style.display = "flex";
   }
 }
 
-// Check empty input
-function checkField(inputElement) {
-  let value = inputElement.value.trim();
-  if (value === "") {
-    throw new Error(`${inputElement.placeholder} cannot be empty`);
-  }
-  return true;
-}
+const form = document.querySelector("form");
 
-let form = document.querySelector("form");
-
-// If input is empty
-form.addEventListener("change", () => {
-  let fields = [
-    document.getElementById("firstName"),
-    document.getElementById("lastName"),
-    document.getElementById("email"),
-    document.getElementById("password"),
-  ];
-
-  let errorText = document.querySelectorAll(".error-text");
-
-  for (let i = 0; i < fields.length; i++) {
-    try {
-      checkField(fields[i]);
-      errorText[i].style.display = "none";
-    } catch (error) {
-      errorText[i].style.display = "block";
-      errorText[i].textContent = error.message;
-    }
-  }
-});
-
-// Submit and check validity
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  let firstName = document.getElementById("firstName");
-  let lastName = document.getElementById("lastName");
-  let email = document.getElementById("email");
-  let password = document.getElementById("password");
-
-  validateInput(firstName, validatefirstName(firstName.value));
-  validateInput(lastName, validatelastName(lastName.value));
-  validateInput(email, validateEmail(email.value));
-  validateInput(password, validatePassword(password.value));
+// Submit and check inputs
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  checkInputs();
 });
