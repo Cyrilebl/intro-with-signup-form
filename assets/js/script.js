@@ -79,10 +79,10 @@ function checkInputs() {
   }
 
   if (
-    isName(firstNameValue) &&
-    isName(lastNameValue) &&
-    isEmail(emailValue) &&
-    isPassword(passwordValue)
+    isName(firstName.value.trim()) &&
+    isName(lastName.value.trim()) &&
+    isEmail(email.value.trim()) &&
+    isPassword(password.value.trim())
   ) {
     const validateSubscription = document.querySelector(".subscription");
     validateSubscription.style.display = "flex";
